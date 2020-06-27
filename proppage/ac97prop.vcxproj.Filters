@@ -14,4 +14,28 @@
       <UniqueIdentifier>{5C8A9804-C44D-4CDD-89CD-547E9EEEE4B9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ac97prop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ac97prop.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AC97prop.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="readme.htm" />
+  </ItemGroup>
 </Project>
