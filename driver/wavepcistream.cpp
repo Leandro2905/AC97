@@ -1570,7 +1570,7 @@ NTSTATUS CMiniportWaveICHStream::GetNewMappings (void)
                 stBDList.nHead, stBDList.nTail, stBDList.nBDEntries));
 
 
-        if (DMAEngineState & DMA_ENGINE_NEED_START)
+        if (DMAEngineState == DMA_ENGINE_NEED_START)
             ResumeDMA ();
     }
 
