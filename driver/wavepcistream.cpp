@@ -1570,7 +1570,7 @@ NTSTATUS CMiniportWaveICHStream::GetNewMappings (void)
                 stBDList.nHead, stBDList.nTail, stBDList.nBDEntries));
 
 
-        if (DMAEngineState == DMA_ENGINE_NEED_START)
+        if (DMAEngineState & DMA_ENGINE_NEED_START)
             ResumeDMA ();
     }
 
@@ -1862,9 +1862,13 @@ NTSTATUS CMiniportWaveICHStream::ResumeDMA (void)
     // the registers.
     //
     UCHAR RegisterValue = Wave->AdapterCommon->
-        ReadBMControlRegister8 (m_ulBDAddr + X_CR) | CR_RPBM;
-    Wave->AdapterCommon->
-        WriteBMControlRegister (m_ulBDAddr + X_CR, RegisterValue);
+        ReadBMControlRegister8 (m_ulBDAddr + X_CR);
+    UCHAR RegisterValueNew = RegisterValue | CR_RPBM;
+    if(RegisterValue != RegisterValueNew) 
+    {
+        Wave->AdapterCommon->
+            WriteBMControlRegister (m_ulBDAddr + X_CR, RegisterValueNew);
+    }
 
     //
     // Set the DMA engine state.
