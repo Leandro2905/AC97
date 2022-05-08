@@ -54,6 +54,8 @@ After the INF file has installed the driver, you can update and test new version
   * Header file for the wavePci miniport
 * prophnd.cpp    
   * Implementation of the property handler (part of the topology miniport)
+* readme.md
+  * Documentation for this sample (this file)
 * shared.h       
   * Header file shared by every C++ source file
 * sources        
